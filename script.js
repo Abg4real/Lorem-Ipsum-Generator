@@ -5,7 +5,10 @@ var original_array = original.trim().split(" ");
 let button = document.getElementById('submit');
 let number = document.getElementById('number');
 let outputDiv = document.getElementById('output');
+let clipboard = document.getElementById('clipboard');
+let icon = document.getElementById('icon');
 let output = [];
+var output_string = '';
 let generateOutput = () => {
     if (number.value == '') {
         alert("Please enter a value");
@@ -31,10 +34,26 @@ let generateOutput = () => {
                 output.push(original_array[i]);
             }
         }
-        let output_string = output.join(" ");
+        output_string = output.join(" ");
         output_string += ".";
         outputDiv.style.display = 'initial';
+        clipboard.style.display = 'initial';
         outputDiv.innerText = output_string;
     }
+}
+
+let copyToClipboard = () => {
+    const el = document.createElement('textarea');
+    el.value = output_string;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    icon.classList.remove('fa-clipboard');
+    icon.classList.add('fa-clipboard-check');
+    document.getElementById('done').style.display = 'initial';
 }
 

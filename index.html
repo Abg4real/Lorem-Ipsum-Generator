@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap"
+        rel="stylesheet">
+    <title>Lorem Ipsum Generator</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            box-sizing: border-box;
+            background-color: antiquewhite;
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main {
+            box-sizing: border-box;
+            background-color: white;
+            width: 1140px;
+            margin: 20px auto;
+            border: 2px solid #111;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            height: fit-content;
+            flex-direction: column;
+            flex: 1 0 25%;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        label {
+            font-size: 1.3rem;
+        }
+
+        input {
+            margin: 10px;
+            font-size: 1.3rem;
+        }
+
+        button {
+            font-size: 1.5rem;
+            padding: 5px 15px;
+        }
+
+        #output {
+            display: none;
+            width: 75%;
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        #footer {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: rgb(75, 75, 75);
+            height: 100px;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+        <h1>Lorem Ipsum Generator</h1>
+        <label for="number">Enter the number of words you need</label>
+        <input type="number" id="number" required>
+        <button id="submit" onclick="generateOutput()">Generate</button>
+        <div id="output"></div>
+    </main>
+    <div id="footer">
+        By Abhishek Ghadge
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
